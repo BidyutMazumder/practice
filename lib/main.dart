@@ -10,11 +10,36 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: TextButton(onPressed: (){}, child: Text("Click")),
-          ),
+      home: home(),
+    );
+  }
+}
+class home extends StatefulWidget {
+  const home({Key? key}) : super(key: key);
+
+  @override
+  _homeState createState() => _homeState();
+}
+
+class _homeState extends State<home> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: TextButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Text("Hi"),
+                      content: Text("data"),
+                    );
+                  },
+                );
+              },
+              child: Text("Click")),
         ),
       ),
     );
