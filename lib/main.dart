@@ -35,6 +35,9 @@ class _homeState extends State<home> {
                     return AlertDialog(
                       title: Text("Hi"),
                       content: Text("data"),
+                      actions: [
+                        ElevatedButton(onPressed: (){Navigator.pop(context);}, child: Text("ok"),)
+                      ],
                     );
                   },
                 );
